@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+$ThemeWhite: #f1f2eb;
+$ThemeBlack: #011826;
+$IconSilver: #9caebd;
+$DarkGray: #81817e;
+$LightGray: #c3c3c3;
+$HighLightBlue: #29aae3;
+$ThemeDarkBlue: #023859;
+$LightBlue: #036688;
+$HeaderDivider: #1c2f3d;
+$ButtonGreen: #84b13f;
+$LogoOrange: #ff6600;
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  background-color: $ThemeWhite;
+  color: $ThemeBlack;
+}
+
+a {
+  font-family: "Open Sans";
+}
+
+h5, .h5 {
+    font-weight: 700 !important;   
+    font-size: 12pt;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $LightGray;
+    font-style: italic;    
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $LightGray;
+    font-style: italic;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $LightGray;
+    font-style: italic;
+}
+button:focus {
+    outline: none;
+}
+.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
+    font-family: "Open Sans", sans-serif;
+}
+.is-invalid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+mat-spinner {
+    font-size: 1rem;
+}

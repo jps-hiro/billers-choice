@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'https://bridgewing.net/',
+  SESSION_SECURE: true,
 };

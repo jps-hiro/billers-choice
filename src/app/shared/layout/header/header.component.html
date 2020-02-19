@@ -1,0 +1,28 @@
+<mat-toolbar class="mat-elevation-z8 landing-header" color="primary">
+  <mat-toolbar-row>
+    <div class="d-flex justify-content-between w-100">
+      <a [routerLink]="['/']" class="logo-text">
+        <img class="logo-img" src="assets/imgs/Lock-orange.svg" alt="">
+        <span class="billers">Billers</span><span class="choice">Choice</span>
+      </a>
+      <div class="header-menu">
+        <ng-container *ngIf="isLoggedIn">
+          <a [routerLink]="[ '/' ]" class="menu-item" routerLinkActive="activeLink">
+            <img src="assets/imgs/Business-themewhite.svg" alt=""> SAMPLE HEALTHCARE PRACTICE
+          </a>
+          <a [routerLink]="[ '/' ]" class="menu-item" routerLinkActive="activeLink">
+            <img src="assets/imgs/User-themewhite.svg" alt=""> WELCOME BACK, TEST
+          </a>
+          <a (click)="logout()" class="menu-item" routerLinkActive="activeLink">
+            <img src="assets/imgs/Logout-themewhite.svg" class="logout" alt="">
+          </a>
+        </ng-container>
+        <ng-container *ngIf="!isLoggedIn">
+          <a [routerLink]="[ '/auth/login' ]" class="menu-item" routerLinkActive="activeLink">
+            <img src="assets/imgs/Hamburger-themewhite.svg" class="logout" alt="">
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

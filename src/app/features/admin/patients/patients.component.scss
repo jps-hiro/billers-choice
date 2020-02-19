@@ -1,0 +1,95 @@
+@import "../../../../styles.scss";
+.sub-header {
+    .home-img {
+        width: 30px
+    }
+}
+.search-section {
+    background-color: $LightBlue;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .search-container {
+        width: 100%;
+        max-width: 550px;
+        position: relative;
+        input {
+            width: 100%;
+            margin: 7.5px 0;
+            border: 0;
+            box-shadow: 0 0.5px 3px #a9a9a9;
+            padding: 7.5px 20px;
+            font-style: italic;
+            border-radius: 20px;
+            outline: 0;
+        }
+        img {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            margin-left: -25px;
+            &.close-img {
+                cursor: pointer;
+            }
+        }
+    }
+}
+.patients-section {
+    padding: 10px 30px;
+    .patients-container {
+        background-color: white;
+        padding: 0 30px;
+        .patients-header {
+            padding: 10px 0;
+            position: relative;
+            border-bottom: solid 1px lightgray;    
+            img {
+                height: 30px;
+            }
+            .full-screen {
+                position: absolute;
+                right: -25px
+            }
+        }
+        .patients-body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .patient-item {
+                margin: 10px;
+                width: 135px;
+                min-width: 135px;
+                height: 135px;
+                position: relative;
+                background-color: $LightBlue;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                overflow: hidden;
+                cursor: pointer;
+                .name {
+                    position: absolute;
+                    bottom: 0;
+                    font-size: .85em;
+                    left: 0;
+                    color: #fff;
+                    width: 100%;
+                    padding: 5px 0 5px 5px;
+                    background: rgba(0,0,0,.3);
+                }
+
+                img {
+                    position: absolute;
+                    height: 135px;
+                    width: 135px;
+                    outline: 0;
+                }
+                .pic-default {
+                    top: 15px;
+                }
+            }
+        }
+    }
+}

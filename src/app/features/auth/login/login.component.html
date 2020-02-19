@@ -1,0 +1,45 @@
+<div class="banner"></div>
+<div class="container d-flex justify-content-center">
+    <form class="login-form w-50" [formGroup]="loginForm">
+        <h5 class="mb-5">Sign in</h5>
+        <div class="form-group mb-4">
+            <input formControlName="clientId" placeholder="Client ID"  class="form-control"
+                [ngClass]="{'is-invalid': fvs.showErrorOnField(loginForm.get('clientId'))}">
+            <label *ngIf="fvs.showErrorOnField(loginForm.get('clientId'))"
+                class="invalid-feedback">
+                    Client Id - is a required field
+            </label>
+        </div>
+        <div class="form-group mb-4">
+            <input formControlName="userName" placeholder="User Name"  class="form-control"
+                [ngClass]="{'is-invalid': fvs.showErrorOnField(loginForm.get('userName'))}">
+            <label *ngIf="fvs.showErrorOnField(loginForm.get('userName'))"
+                class="invalid-feedback">
+                    UserName - is a required field
+            </label>
+        </div>
+        <div class="form-group password mb-5">
+            <input formControlName="password" placeholder="Password"  class="form-control"
+                [ngClass]="{'is-invalid': fvs.showErrorOnField(loginForm.get('password'))}">
+                
+            <a class="show-pwd" *ngIf="!fvs.showErrorOnField(loginForm.get('password'))">
+                <img src="assets/imgs/ShowPassword-darkgray.svg">
+            </a>
+            <label *ngIf="fvs.showErrorOnField(loginForm.get('password'))"
+                class="invalid-feedback">
+                    Password - is a required field
+            </label>
+        </div>
+        <div>
+            <mat-checkbox>Check me!</mat-checkbox>
+        </div>
+        <div class="mt-4 text-center">
+            <button mat-raised-button color="accent" (click)="sign()"
+                [disabled]="!loginForm || !loginForm.valid || checking"
+            >
+                <mat-spinner class="d-inline-block mr-2" *ngIf="checking" diameter="20"></mat-spinner>
+                Sign In
+            </button>
+        </div>
+    </form>
+</div>

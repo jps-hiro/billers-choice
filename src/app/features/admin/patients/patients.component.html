@@ -1,0 +1,43 @@
+<div class="sub-header w-100 d-flex justify-content-between align-items-center p-3">
+    <img src="assets/imgs/Home.svg" alt="" class="home-img">
+    <button mat-button color="accent">
+        <mat-icon>add_circle</mat-icon>
+        Add New Patient
+    </button>
+</div>
+<div class="search-section">
+    <div class="search-container">
+        <input class="search-input" placeholder="Search">
+        <img class="search-img" src="assets/imgs/Search-gray.svg">
+        <!-- <img class="close-img" src="assets/imgs/close.png" hidden> -->
+    </div>
+</div>
+<div class="patients-section">
+    <div class="patients-container p-3 d-flex align-items-center w-100 flex-column">
+        <mat-spinner *ngIf="loading"></mat-spinner>
+        <ng-container *ngIf="!loading">
+            <div class="patients-header w-100">
+                <img src="assets/imgs/Patient-blue.svg">
+                <span>Patients ({{pagination.length}})</span>
+                <img src="assets/imgs/Maximize-blue.svg" class="full-screen">
+            </div>
+            <div class="patients-body w-100">
+                <div class="patient-item" *ngFor="let item of items" (click)="viewItem(item)">
+                    <img [src]="'data:image/jpeg;base64,'+item.imageData" *ngIf="item.imageData" >
+                    <img [src]="'assets/imgs/'+(item.gender==='M'?'Bust-Male.svg':'Bust-Female.svg')" 
+                        class="pic-default"
+                        *ngIf="!item.imageData && item.gender">
+                    <div class="name">
+                        {{item.displayId}}
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <mat-paginator [length]="pagination.length"
+               [pageSize]="pagination.pageSize"
+               [pageSizeOptions]="[5,10,25,100]"
+               (page)="changePageEvent($event)">
+    </mat-paginator>
+    
+</div>
